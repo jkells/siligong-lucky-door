@@ -29,7 +29,8 @@ const luckyDoor = async () => {
     await doWelcome(rsvps.length)
     const images = await Promise.all(rsvps.map(getImage))
 
-    for (var i = 0; i < rsvps.length * 2; i++) {
+    let i = rsvps.length * 2
+    do {
         const winner = rsvps[i % rsvps.length]
         const photo = images[i % rsvps.length]
 
@@ -38,8 +39,8 @@ const luckyDoor = async () => {
         console.log(photo)
         console.log(winner.member.name)
 
-        await sleep(Math.pow(i, 3) / 3000 + 500)
-    }
+        await sleep(Math.pow(rsvps.length - i, 2) / 3000 + 500)
+    } while (--i)
 
     clear()
     console.log()
