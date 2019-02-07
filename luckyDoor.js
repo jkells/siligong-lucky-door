@@ -1,12 +1,12 @@
 const _ = require("lodash")
 const fetch = require("node-fetch")
 const clear = require("clear")
-const termImg = require("term-img")
+const terminalImage = require("terminal-image")
 
 const getImage = async rsvp => {
     const url = rsvp.member.photo ? rsvp.member.photo.photo_link : "https://secure.meetupstatic.com/photos/event/8/a/b/3/600_470975507.jpeg"
     const imgResponse = await fetch(url)
-    return termImg.string(await imgResponse.buffer(), { height: "60%" })
+    return terminalImage.buffer(await imgResponse.buffer(), { height: "60%" })
 }
 
 const doWelcome = async (length) => {
