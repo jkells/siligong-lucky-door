@@ -14,9 +14,6 @@ const doWelcome = async (length) => {
     console.log()
     console.log("Siligong.js Lucky Door prize generator")
     console.log(`Picking a winner out of ${length} attendees`)
-    await sleep(5000)
-    clear()
-    console.log()
 }
 
 const sleep = (x) => new Promise((resolve) => setTimeout(() => resolve(), x))
@@ -26,8 +23,9 @@ const luckyDoor = async () => {
     // Use this: https://secure.meetup.com/meetup_api/console/?path=/:urlname/events/:event_id/rsvps
     const response = await fetch("https://api.meetup.com/SiligongValley/events/257181487/rsvps?photo-host=public&response=yes")
     const rsvps = _.shuffle(await response.json())
-    await doWelcome(rsvps.length)
     const images = await Promise.all(rsvps.map(getImage))
+    await doWelcome(rsvps.length)
+    await sleep(5000)
 
     let i = rsvps.length * 2
     do {
