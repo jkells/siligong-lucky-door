@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./luckydoor.js"
+  },
   "dependencies": {
     "clear": "^0.1.0",
     "lodash": "^4.17.11",
