@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./luckydoor.js"
+  },
   "dependencies": {
     "clear": "^0.1.0",
+    "immer": "^2.0.0",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0",
-    "term-img": "^4.0.0"
+    "terminal-image": "^0.1.2"
   }
 }
