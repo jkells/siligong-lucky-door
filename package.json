@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./luckydoor.js"
+    "start": "node ./luckyDoor.js"
   },
   "dependencies": {
     "clear": "^0.1.0",
